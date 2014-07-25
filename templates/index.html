@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Homer backing into bushes generator. Upload an image to create a new gif!" />
+    <title>Homer Backing Into Things Generator</title>
+
+    <style type="text/css">
+    img, input {
+        display: block;
+        margin: 10px auto;
+    }
+    h3 {
+        display: table;
+        margin: 10px auto;
+    }
+    </style>
+  </head>
+  <body>
+    <img src='static/images/homer.gif' alt='Homer backing into bushes' />
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <br />
+        {% for message in messages %}
+            <h3>{{ message }}</h3>
+        {% endfor %}
+      {% else %}
+        <h3>Upload an image to replace the bushes</h3>
+      {% endif %}
+    {% endwith %}
+    <br />
+    <form action='/homerfy' method='post' enctype='multipart/form-data'>
+        <label for='bg_img'></label>
+        <input type='file' name='bg_img' />
+        <br />
+        <input type='submit' value='Homerfy' />
+    </form>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-51746617-1', 'homerbackingintothings.com');
+  ga('send', 'pageview');
+
+</script>
+  </body>
+</html>
+

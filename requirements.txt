@@ -1,0 +1,8 @@
+Flask==0.10.1
+Jinja2==2.7.3
+Pillow==2.4.0
+Werkzeug==0.9.6
+colorama==0.2.5
+requests==2.3.0
+pyimgur==0.5.2
+images2gif==1.0.1
